@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>ERMAGERD! TERSKS!</h1>
+
+  <% @tasks.each do |task| %>
+    <li>
+      <% check_icon = task.completed ?  "fa-solid fa-square-check" : "fa-solid fa-square" %>
+      <i class="<%= check_icon %>" ></i>
+      <%= link_to task.title, task_path(task)  %>
+      <%= link_to task_path(task), class: "btn btn-light", data: { turbo_method: :delete, turbo_confirm: "Delete #{task.title}?" } do %>
+      <i class="fa-solid fa-trash"></i>
+      <% end %>
+    </li>
+  <% end %>
+
+  <%= link_to new_task_path, class: "btn btn-primary" do %>
+  <i class="fa-solid fa-calendar-plus"></i>
+  Create New Task
+  <% end %>
+</div>

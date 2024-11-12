@@ -1,0 +1,8 @@
+<div class="contaioner">
+  <h1><%= @task.title %></h1>
+  <h3><%= @task.details %></h3>
+  <p> <i class="fa-solid fa-square-check"></i> This task is completed.</p>
+
+  <%= link_to "Edit Tersk", edit_task_path, class: "btn btn-light" %>
+  <%= link_to "Return to Tasks", tasks_path, class: "btn btn-primary" %>
+</div>
